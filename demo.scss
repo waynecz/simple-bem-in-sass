@@ -1,0 +1,29 @@
+@import 'mixin';
+
+@include b(human) {
+    @include e(finger) {
+      @include m(little) {}
+    }
+  
+    @include m(male) {
+      @include e(leg) {}
+    }
+  
+    @include pseudo(hover) {
+      @include e(hand) {}
+    }
+  
+    @include when(hurt) {
+      @include e(hand) {}
+    }
+  
+    @include e(arm) {
+      @include pseudo(focus) {
+        @include spec-selector('+') {
+          @include m(left) {}
+        }
+        @include spec-selector('~', hand, right) {}
+      }
+    }
+  }
+  
