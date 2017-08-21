@@ -9,6 +9,12 @@ $state-prefix: 'is-';
 
 /* Func
  -------------------------- */
+ @function selectorToString($selector) {
+  $selector: inspect($selector);
+  $selector: str-slice($selector, 2, -2);
+  @return $selector;
+}
+
 @function containsModifier($selector) {
   $selector: selectorToString($selector);
 
